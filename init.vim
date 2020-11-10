@@ -1,37 +1,20 @@
-"setup vim-plug {{{
-
-  "Note: install vim-plug if not present
-  if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall
-  endif
-
-  "Note: Skip initialization for vim-tiny or vim-small.
-  if !1 | finish | endif
-  if has('vim_starting')
-    set nocompatible               " Be iMproved
-    " Required:
-    call plug#begin()
-  endif
-
-"}}}
-
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
 
 " Functionality
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 
 " Aesthetics
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'anned20/vimsence'
 
 call plug#end()
 
@@ -75,8 +58,19 @@ let g:limelight_eop = '\ze\n^\s'
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
 
+" Orchard
 " Nerdtree
 map <LEADER>n :NERDTreeToggle<CR>
+" Undotree
+map <LEADER>u :UndotreeToggle<CR>
+
+" Generic bindings
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " Misc, keep at bottom
 set noshowmode
+se nu
+set incsearch
