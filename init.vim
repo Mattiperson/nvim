@@ -1,7 +1,7 @@
 call plug#begin()
 
 " Functionality
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
